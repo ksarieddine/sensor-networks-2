@@ -26,14 +26,14 @@ implementation
 	enum state {TX, RX} mode;
 	event void Boot.booted() {
 		call AMControl.start();
-		mode = RX;
+		mode = RX; /*  if mode RX then it is a receiver if it is TX then it is a transmitter */
 	}
 
 	event void AMControl.startDone(error_t err)
 	{
 		if( err == SUCCESS)
 		{
-			if(mode == TX)
+			if(mode == TX) 
 			{
 				call Timer0.startPeriodic(1000);
 			}else{
