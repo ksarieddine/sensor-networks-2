@@ -1,1 +1,3 @@
 # sensor-networks-2
+
+We made simple changes to the Blink application to become familiar with TinyOS-nesC programming in the first sensor networks repository. The idea is to have a mote “sense” data and transmit it to another mote which eventually will reach the computer that collects and analyzes all the readings. Programmed the first mote to read light sensing and program the second mote to receive signals from the first mote. If the light level, sensed by first mote is above a certain threshold, first mote will notify (transmit signals) to the second mote via radio so that the second mote will turn its LED On. If the light sensed by the first mote is below some threshold, it will send the notification to the second mote, and that mote will turn the LED Off.
